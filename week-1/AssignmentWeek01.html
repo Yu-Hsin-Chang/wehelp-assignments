@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset = "utf-8"></meta>
+        <title>Welcome To My Blog</title>
+        <style type = "text/css">
+            .title{ 
+                background-color :#DB7093; color:#000000; font-weight:bold;
+                font-size:25px; text-align: center; 
+                padding:136px;
+            }
+            nav{
+                display:flex;
+            }
+            nav>.Logo{ 
+                /*沒有彈性，固定尺寸*/
+                flex:none; width:80px;
+                text-align: center;
+                padding:5px ; margin:5px;
+            }
+            nav>.Menu{ 
+                /*盡量把容器的空間張滿*/
+                flex:auto; 
+            }
+            nav>.Item{ 
+                flex:none; 
+                width:80px;
+                text-align: center;
+                padding:5px ; margin:5px;
+            }
+
+            /*main樣式設定*/
+            main{
+                display:flex;
+                align-items: flex-end; /*垂直對齊:靠下方*/
+                flex-wrap:wrap;/*RWD換行設定*/
+                justify-content: center;
+            }
+            main>.plotbox{
+                flex:none;
+                width:260px; margin:10px;
+                padding-bottom: 5px;
+                font-size:20px;
+                text-align: center;
+                color:#FFF0F5;
+                background-color: #b63d65;
+            }
+            nav>.bugerItem{ 
+                display:none;
+                flex:none; 
+                text-align: center;
+                padding:5px ; 
+                margin:5px;
+            }
+
+            /*600~1200 px*/
+            @media (max-width:1200px){
+                main >.plotbox{
+                    width:40%;
+                }
+
+            }
+            /*< 600px*/
+            @media (max-width: 600px){
+                main >.plotbox{
+                    width:90%;
+                }
+                nav>.Item{ 
+                    display:none;
+                }
+                nav>.bugerItem{ 
+                    display:block;
+                    width: 20px;
+                }
+            }
+
+            .object-fit { width: 100%; }
+            .object-fit_fill { object-fit: fill }
+            .object-fit_cover { object-fit: cover }
+
+        </style>
+    </head>
+    <body style = "margin:0px; background-color:#FFF0F5;">
+        <nav>
+            <div class ="Logo">My Website</div>
+            <div class ="Menu"></div>
+            <div class ="Item">About Me</div>
+            <div class ="Item">Resume</div>
+            <div class ="Item">Projects</div>
+            <div class ="Item">Contact</div>
+            <div class ="bugerItem"><img class="object-fit .object-fit_fill" src = "images/menu.png" alt = ""></div>
+        </nav>
+        <div class = "title">Welcome To My Blog</div>
+        <!--  RWD 回應式設計的關鍵動作 : 欄位變化 Flex : 4欄 -> 2 欄 -> 1欄 
+            規劃 : 1200px(4欄), 固定尺寸
+                   600px ~ 1200px之間的規劃 : 2欄，彈性尺寸
+                   600 px 以下 : 1欄，彈性尺寸
+        -->
+        
+        <main>
+            <div class = "plotbox"><img class="object-fit object-fit_cover" src = "images/IUPlot1.jpg" alt = "">IU-01</div>
+            <div class = "plotbox"><img class="object-fit object-fit_cover" src = "images/IUPlot1.jpg" alt = "">IU-02</div>
+            <div class = "plotbox"><img class="object-fit object-fit_cover" src = "images/IUPlot1.jpg" alt = "">IU-03</div>
+            <div class = "plotbox"><img class="object-fit object-fit_cover" src = "images/IUPlot1.jpg" alt = "">IU-04</div>
+            <div class = "plotbox"><img class="object-fit object-fit_cover" src = "images/IUPlot1.jpg" alt = "">IU-05</div>
+            <div class = "plotbox"><img class="object-fit object-fit_cover" src = "images/IUPlot1.jpg" alt = "">IU-06</div>
+            <div class = "plotbox"><img class="object-fit object-fit_cover" src = "images/IUPlot1.jpg" alt = "">IU-07</div>
+            <div class = "plotbox"><img class="object-fit object-fit_cover" src = "images/IUPlot1.jpg" alt = "">IU-08</div>
+        </main>
+
+
+
+
+    </body>
+</html>
